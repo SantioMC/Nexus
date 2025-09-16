@@ -27,7 +27,7 @@ allprojects {
 dependencies {
     api(project(":api"))
 
-    paperweight.paperDevBundle("1.21.8-R0.1-SNAPSHOT")
+    paperweight.paperDevBundle("1.21.5-R0.1-SNAPSHOT")
 
     compileOnly(libs.autoservice.google)
     ksp(libs.autoservice.ksp)

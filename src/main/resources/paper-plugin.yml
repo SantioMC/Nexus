@@ -3,9 +3,3 @@ main: me.santio.nexus.NexusPlugin
 api-version: '1.20'
 version: '${version}'
 load: STARTUP
-dependencies:
-  server:
-    ViaVersion:
-      load: AFTER
-      required: true
-      join-classpath: false
