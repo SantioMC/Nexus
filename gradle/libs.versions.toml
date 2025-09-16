@@ -1,0 +1,52 @@
+[versions]
+shadow = "8.3.6"
+slf4j = "2.0.16"
+packetevents = "2.9.4"
+nats = "2.20.5"
+cloud-core = "2.0.0"
+cloud-minecraft = "2.0.0-beta.10"
+netty = "4.2.0.Final"
+paperweight = "2.0.0-beta.17"
+paper = "1.21.7-R0.1-SNAPSHOT"
+bytebuddy = "1.17.5"
+objenesis = "3.4"
+sidebar = "2.3.1"
+zstd = "1.5.7-3"
+minio = "8.5.17"
+kotlin = "2.1.20"
+ksp = "2.1.20-2.0.1"
+kotlinx-serialization-core = "1.9.0"
+kotlinx-coroutines = "1.9.0"
+autoservice-google = "1.1.1"
+autoservice-ksp = "1.2.0"
+
+[plugins]
+kotlin = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+shadow = { id = "com.gradleup.shadow", version.ref = "shadow" }
+paperweight = { id = "io.papermc.paperweight.userdev", version.ref = "paperweight" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+kotlinx-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+
+[libraries]
+slf4j-api = { module = "org.slf4j:slf4j-api", version.ref = "slf4j" }
+packetevents = { module = "com.github.retrooper:packetevents-spigot", version.ref = "packetevents" }
+nats = { module = "io.nats:jnats", version.ref = "nats" }
+cloud-annotations = { module = "org.incendo:cloud-annotations", version.ref = "cloud-core" }
+cloud-core = { module = "org.incendo:cloud-core", version.ref = "cloud-core" }
+cloud-paper = { module = "org.incendo:cloud-paper", version.ref = "cloud-minecraft" }
+netty = { module = "io.netty:netty-buffer", version.ref = "netty" }
+bytebuddy = { module = "net.bytebuddy:byte-buddy", version.ref = "bytebuddy" }
+objenesis = { module = "org.objenesis:objenesis", version.ref = "objenesis" }
+sidebar-api = { module = "net.megavex:scoreboard-library-api", version.ref = "sidebar" }
+sidebar-impl = { module = "net.megavex:scoreboard-library-implementation", version.ref = "sidebar" }
+sidebar-packetevents = { module = "net.megavex:scoreboard-library-packetevents", version.ref = "sidebar" }
+zstd = { module = "com.github.luben:zstd-jni", version.ref = "zstd" }
+minio = { module = "io.minio:minio", version.ref = "minio" }
+paper = { module = "io.papermc.paper:paper-api", version.ref = "paper" }
+kotlinx-serialization-core = { module = "org.jetbrains.kotlinx:kotlinx-serialization-core", version.ref = "kotlinx-serialization-core" }
+kotlinx-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
+autoservice-google = { module = "com.google.auto.service:auto-service", version.ref = "autoservice-google" }
+autoservice-ksp = { module = "dev.zacsweers.autoservice:auto-service-ksp", version.ref = "autoservice-ksp" }
+
+[bundles]
+cloud = ["cloud-paper", "cloud-core", "cloud-annotations"]

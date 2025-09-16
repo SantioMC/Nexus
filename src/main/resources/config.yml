@@ -1,0 +1,45 @@
+#
+#  Nexus
+#  Cross-server synchronization
+#
+# Nexus is a plugin that allows multiple servers to mimic a single large server, allowing
+# support for a significantly larger amount of players without tanking performance. All
+# communication for Nexus is throughout NATs (https://nats.io) which must be deployed
+# before being able to use Nexus. No additional features are required (such as JetStream).
+#
+
+# The pool configuration, servers all on the same pool with be synchronized.
+pool:
+  name: my-server
+
+# Nats configuration, Nexus uses NATS for communication between servers
+nats:
+  # The url of the nats cluster to connect to, comma separate to try multiple urls
+  url: nats://localhost:4222
+
+# S3 configuration, used to synchronize the world between servers
+s3:
+  # The s3 endpoint to connect to
+  url: http://localhost:9000
+  # The region of the bucket (for Minio, this is ignored)
+  region: us-east-1
+  # The access key used for authentication (sometimes called key id)
+  access-key: nexusdemo
+  # The secret key used for authentication (sometimes called access key, don't ask)
+  secret-key: nexusdemo
+  # The bucket to use for storing the world
+  bucket: nexusdemo
+
+# Features can be enabled / disabled to better suit your needs
+features:
+  # Whether players should synchronize between servers (movement, viewing, etc.)
+  player-sync: true
+
+  # Whether PvP should be possible between servers (this doesn't include entities, such as arrows)
+  pvp: true
+
+  # Whether entities should be synchronized between servers (mobs, ai, arrows, etc.)
+  mob-sync: true
+
+  # Whether world changes should be synchronized between servers (block break & place)
+  world-sync: true
